@@ -69,7 +69,7 @@ window.onload=function(){
 			name:'张三',
 			message:'去哪玩',
 			img:'1.png'
-		},
+		}
 	]
 	
 	//success
