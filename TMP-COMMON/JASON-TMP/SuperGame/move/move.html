@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<title>Move</title>
+</head> 
+<body> 
+	<input id="btn" type="button" value=" Move It ! "/>
+	<div id="d1" style="left:20px;position:absolute">
+		<img id="i1" src="1.jpg" alt/>
+	</div>
+	<script type="text/javascript">
+		//Success!
+		function myParseInt(s) {
+            var ret = parseInt(s);
+            return (isNaN(ret) ? 0 : ret);
+        }
+		var timer=null;
+		window.onload=function(){
+			var odiv=document.getElementById('d1');
+			var obtn=document.getElementById('btn');
+			clearInterval(timer);
+			obtn.onclick=function(){
+				//alert("yyy");
+				timer=setInterval(function(){
+					var speed=20;
+					if(odiv.offsetLeft>=600){ 
+						//alert(1);
+						clearInterval(timer);
+					}else{
+						//alert(odiv.offsetLeft);
+						//alert(2);
+						//alert(odiv.style.left);
+						odiv.style.left =(myParseInt(odiv.style.left) + speed) + "px"
+					}
+				},30);
+			}
+		}
+	</script>
+</body> 
+</html>
